@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadObjectsFromOneBucket",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::task4-secure-bucket-10-11-26/*"
+    },
+    {
+      "Sid": "ListOneBucket",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::task4-secure-bucket-10-11-26"
+    },
+    {
+      "Sid": "ReadOneSecret",
+      "Effect": "Allow",
+      "Action": "secretsmanager:GetSecretValue",
+      "Resource": "arn:aws:secretsmanager:eu-north-1:<ACCOUNT_ID>:secret:task4/app-secret-<SUFFIX>"
+    }
+  ]
+}
